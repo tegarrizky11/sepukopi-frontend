@@ -1,9 +1,7 @@
-// src/services/api.js
 import axios from 'axios';
 
 const api = axios.create({
-    // Menggunakan Environment Variable dari Vercel untuk produksi
-    // Jika sedang di laptop (lokal), otomatis balik ke localhost
+    // Cukup satu baseURL saja yang menggunakan variable
     baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', 
     headers: {
         'Content-Type': 'application/json',
