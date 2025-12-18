@@ -2,7 +2,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api', // PASTIKAN PORT BACKEND ANDA 5000
+    // Menggunakan Environment Variable dari Vercel untuk produksi
+    // Jika sedang di laptop (lokal), otomatis balik ke localhost
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', 
     headers: {
         'Content-Type': 'application/json',
     },
