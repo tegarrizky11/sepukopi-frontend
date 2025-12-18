@@ -1,0 +1,71 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    width: 260px;
+    background: #1e293b;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease;
+    z-index: 10000; /* Sangat tinggi agar di atas semua elemen */
+}
+
+.sidebar.closed {
+    transform: translateX(-260px);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-toggle {
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 11000; /* Di atas sidebar */
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-brand { padding: 30px 24px; font-size: 1.2rem; }
+.sidebar-brand h2 span { color: #3b82f6; }
+.sidebar-menu { flex: 1; padding: 0 12px; margin-top: 40px; }
+.menu-item {
+    display: flex; align-items: center; padding: 14px 16px;
+    margin-bottom: 8px; border-radius: 12px; cursor: pointer;
+    transition: 0.3s; color: #94a3b8;
+}
+.menu-item:hover { background: rgba(255, 255, 255, 0.05); color: white; }
+.menu-item.active { background: #3b82f6; color: white; }
+.menu-icon { margin-right: 12px; font-size: 1.2rem; }
+.sidebar-footer { padding: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.logout-btn {
+    width: 100%; padding: 12px; background: #ef4444;
+    border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 280px;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+    }
+    .sidebar.closed {
+        transform: translateX(-280px);
+    }
+    .sidebar-toggle {
+        background: #1e293b; /* Warna gelap agar kontras di HP */
+    }
+}

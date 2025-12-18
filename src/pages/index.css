@@ -1,0 +1,23 @@
+/* src/index.css */
+
+/* Hapus default margin dan padding browser */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pastikan HTML dan Body mengambil seluruh viewport */
+html, body, #root, .App {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  /* Tambahkan font dasar */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4; /* Latar belakang abu-abu terang */
+}
+
+/* Hilangkan margin default di App */
+.App {
+  margin: 0;
+}
